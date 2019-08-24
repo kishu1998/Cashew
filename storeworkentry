@@ -1,0 +1,15 @@
+<?php
+
+    session_start();
+    include('db.php');
+	for($i=0;$i<$_SESSION['j'];$i++)
+	{
+		$contents = $_POST['contents[$i]'];
+		$query="insert into work_details(date('d/m/y'),$contents,4,$i)";
+		mysqli_query($con,$query);
+    }
+
+        
+
+        mysqli_close($con);
+?>
